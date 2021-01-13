@@ -4,5 +4,3 @@ const data = [
   { date: '2021-01-09T05:00:00.000Z', events: 1 },
   { date: '2021-01-11T22:57:52.539Z', events: 2 },
 ];
-
-export { data };
