@@ -12,8 +12,8 @@ function createDate(year, month, day, hour = 12, minute = 00) {
 }
 
 function createCalendar(start, end) {
-  const x = start.getDay();
-  const y = end.getDay();
+  const x = start.getDate();
+  const y = end.getDate();
 
   // Create an array
   let result = [];
