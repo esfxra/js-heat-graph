@@ -1,5 +1,6 @@
-// const date = new Date(2021, 1, 15, 22, 15); // febrero 15 2021 10 15 pm
-// console.log(date);
+// Setting up aliases
+const DateTime = luxon.DateTime;
+const Duration = luxon.Duration;
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
@@ -8,22 +9,28 @@ function getRandomIntInclusive(min, max) {
 }
 
 function createDate(year, month, day, hour = 12, minute = 00) {
-  return new Date(year, month, day, hour, minute);
+  return DateTime.fromObject({
+    year: year,
+    month: month,
+    day: day,
+    hour: hour,
+    minute: minute,
+  });
 }
 
 function createCalendar(start, end) {
-  const x = start.getDay();
-  const y = end.getDay();
+  // const result = start.plus({ day: 1 });
+  const difference = end.diff(start, "days");
+  // console.log(difference);
+  // console.log(difference.days);
 
-  // Create an array
-  let result = [];
+  const calendar = [];
 
-  // Populate the array with dates
-  for (let i = x; i <= y; i++) {
-    result.push(createDate(2021, 1, i));
+  for (let i = 0; i <= difference.days; i++) {
+    const date = start.plus({ day: i });
+    calendar.push(date.toLocaleString());
   }
-
-  return result;
+  return calendar;
 }
 
 function dailyActivity(calendar) {
@@ -39,12 +46,17 @@ function dailyActivity(calendar) {
 }
 
 // Feb 2021 Week 1
-const start = createDate(2021, 1, 1);
-const end = createDate(2021, 1, 5);
+const start = createDate(2021, 2, 1);
+const end = createDate(2021, 3, 15);
 
 // Create calendar
 const calendar = createCalendar(start, end);
+console.log(calendar);
 
 // Populate calendar with activity data
 const activity = dailyActivity(calendar);
 console.log(activity);
+
+// activity.forEach((activity) => {
+//   console.log(activity.date.toLocaleString());
+// });
