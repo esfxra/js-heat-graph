@@ -19,10 +19,15 @@ function createDate(year, month, day, hour = 12, minute = 00) {
 }
 
 function createCalendar(start, end) {
+<<<<<<< HEAD
   // const result = start.plus({ day: 1 });
   const difference = end.diff(start, "days");
   // console.log(difference);
   // console.log(difference.days);
+=======
+  const x = start.getDate();
+  const y = end.getDate();
+>>>>>>> ad85f54d2c41075eaf5c0356fdbe506d28f5ec1a
 
   const calendar = [];
 
