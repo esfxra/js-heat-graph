@@ -8,7 +8,7 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function createDate(year, month, day, hour = 12, minute = 00) {
+function createDate(year, month, day, hour = 12, minute = 0) {
   return DateTime.fromObject({
     year: year,
     month: month,
@@ -19,7 +19,7 @@ function createDate(year, month, day, hour = 12, minute = 00) {
 }
 
 function createCalendar(start, end) {
-  const difference = end.diff(start, "days");
+  const difference = end.diff(start, 'days');
 
   const calendar = [];
 
