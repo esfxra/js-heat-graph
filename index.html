@@ -1,16 +1,23 @@
 <html>
   <head>
-    <title>This it the title</title>
+    <title>This is the title</title>
     <style>
-      p {
+      .day {
         color: darkcyan;
-        font-size: 12;
+        font-size: 12px;
+        border: 1px solid grey;
+        /* width: fit-content; */
+        width: 15px;
+        height: 15px;
+      }
+      .week {
+        display: inline-block;
+        margin: 2px;
       }
     </style>
   </head>
   <body>
     <div id="root"></div>
-
     <script
       src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js"
       crossorigin="anonymous"
