@@ -10,4 +10,4 @@ const activity = dailyActivity(calendar);
 // console.log(activity);
 
 // Draw calendar
-drawCalendar(calendar);
+drawCalendar(activity);
