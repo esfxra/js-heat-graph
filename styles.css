@@ -9,3 +9,24 @@
 .week {
   display: inline-grid;
 }
+
+.legend-item {
+  display: inline-block;
+  text-align: center;
+}
+
+.no-activity {
+  background-color: #b4c3c9;
+}
+
+.few-activity {
+  background-color: #6a8793;
+}
+
+.some-activity {
+  background-color: #395f6e;
+}
+
+.plenty-activity {
+  background-color: #08384b;
+}

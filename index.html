@@ -4,7 +4,28 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Calendar and activity -->
     <div id="root"></div>
+    <!-- Legend -->
+    <div>
+      <h1>legend</h1>
+      <div class="legend-item">
+        <div class="day no-activity"></div>
+        <span>0</span>
+      </div>
+      <div class="legend-item">
+        <div class="day few-activity"></div>
+        <span>1 - 4</span>
+      </div>
+      <div class="legend-item">
+        <div class="day some-activity"></div>
+        <span>5 - 8</span>
+      </div>
+      <div class="legend-item">
+        <div class="day plenty-activity"></div>
+        <span>> 9</span>
+      </div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
