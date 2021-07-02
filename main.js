@@ -6,8 +6,8 @@ import {
 } from "./lib/createCalendar.js";
 
 // Feb 2021 Week 1
-const start = createDate(2021, 2, 1);
-const end = createDate(2021, 3, 15);
+const start = createDate(2021, 1, 31);
+const end = createDate(2021, 4, 12);
 
 // Create calendar
 const calendar = createCalendar(start, end);
