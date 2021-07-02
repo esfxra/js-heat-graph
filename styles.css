@@ -1,0 +1,11 @@
+.day {
+  width: 30px;
+  height: 30px;
+  margin: 2.5px 2.5px;
+
+  border: 1px solid grey;
+}
+
+.week {
+  display: inline-grid;
+}
