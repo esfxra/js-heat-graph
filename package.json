@@ -1,12 +1,12 @@
 {
   "version": "0.0.0",
+  "source": "src/index.html",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "dev": "parcel",
+    "build": "parcel build"
   },
   "devDependencies": {
-    "vite": "^2.3.8"
+    "parcel": "^2.0.0"
   },
   "dependencies": {
     "luxon": "^1.27.0"

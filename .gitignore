@@ -1,5 +1,8 @@
-node_modules
-.DS_Store
-dist
-dist-ssr
+dist/
+node_modules/
+parcel-bundle-reports/
+.parcel-cache/
+.cache/
+.vscode/
 *.local
+.DS_Store

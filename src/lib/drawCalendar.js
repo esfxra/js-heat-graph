@@ -53,6 +53,7 @@ function missingDays(week, firstDate) {
 // Draws calendar
 function drawCalendar(activity) {
   const root = document.querySelector('#root');
+  root.replaceChildren();
 
   let day;
   let week = document.createElement('div');
