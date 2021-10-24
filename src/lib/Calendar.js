@@ -2,46 +2,58 @@ import Day from './Day';
 import Week from './Week';
 
 class Calendar {
-  // Where data is an object with all dates, and all contributions
   constructor(data) {
-    // Create a bunch of weeks
-    // ... with a bunch of days
-    // ... while assigning the respective contributions
-    // this.data = data;
-    // this.days = [];
-    this.weeks = createWeeks(data);
-  }
-
-  createDays() {
-    // Loop todos los días
-    // Loop through activity, create days and weeks, append to root
-    for (let i = 0; i < data.length; i++) {
-      // day = createDay(activity[i].date.day);
-      // day = shapeDay(day);
-      // day = paintDay(day, activity[i].activity);
-      const day = new Day(data[i].date.day, data[i].activity);
-      day.shapeDay();
-      day.paintDay();
-    }
-
-    return [d1, d2, d3, d4];
-  }
-
-  assignWeeks(days) {
-    days.forEach((day) => {
-      if (day.date.weekday % 7 == 0) {
-        // Close week
-      }
-    });
-
-    this.weeks = [w1, w2, w3, w4];
+    this.weeks = this.createWeeks(data);
   }
 
   createWeeks(data) {
-    const days = this.createDays(data);
+    const calendar = [];
 
-    this.weeks = this.assignWeeks(days);
+    // Create empty days for incomplete weeks
+    const missingDays = [];
+    if (data[0].date.weekday != 1) {
+      // while (missingDays.length < 7) {
+      // }
+      for (let i = 1; i < data[0].date.weekday; i++) {
+        const emptyDay = new Day('', 0);
+        missingDays.push(emptyDay.node);
+      }
+    }
+
+    console.log(missingDays);
+
+    let currentWeek = [...missingDays];
+
+    for (let i = 0; i < data.length; i++) {
+      const day = new Day(data[i].date, data[i].activity);
+      currentWeek.push(day.node);
+
+      // Using weekday, which describes the days of the week from 1 to 7
+      // 1 -> Monday
+      // ...
+      // 7 -> Sunday
+      if (data[i].date.weekday == 7) {
+        // Convert current week to a DOM node
+        const week = new Week(currentWeek);
+        // Add current week to calendar
+        calendar.push(week.node);
+        // Reset week
+        currentWeek = [];
+      }
+    }
+
+    // Add any remaining days to calendar, even if these do not complete a week
+    if (currentWeek.length != 0) {
+      // Convert current week to a DOM node
+      const week = new Week(currentWeek);
+      // Add current week to calendar
+      calendar.push(week.node);
+      // Reset week
+      currentWeek = [];
+    }
+
+    return calendar;
   }
 }
 
-const calendar = new Calendar(data);
+export { Calendar };

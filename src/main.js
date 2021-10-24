@@ -1,20 +1,17 @@
-import { drawCalendar } from './old_lib/drawCalendar.js';
-import {
-  createCalendar,
-  dailyActivity,
-  createDate,
-} from './old_lib/createCalendar.js';
+import { createDate, generateData } from './scripts/generateData';
+import { Calendar } from './lib/Calendar';
 
-// Feb 2021 Week 1
 const start = createDate(2021, 1, 31);
 const end = createDate(2021, 4, 12);
 
-// Create calendar
-const calendar = createCalendar(start, end);
-// Populate calendar with activity data
-const activity = dailyActivity(calendar);
-// Print activity
-// console.log(activity);
+// Generate data
+const data = generateData(start, end);
 
-// Draw calendar
-drawCalendar(activity);
+// Create calendar
+const calendar = new Calendar(data);
+// console.log(calendar.weeks);
+
+// Append to root
+const root = document.querySelector('#root');
+root.replaceChildren();
+calendar.weeks.forEach((week) => root.appendChild(week));

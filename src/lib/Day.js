@@ -1,16 +1,38 @@
 class Day {
-  constructor(date, contributions) {
+  constructor(date, activity) {
     this.date = date;
-    this.contributions = contributions;
+    this.activity = activity;
+
+    this.node = document.createElement('div');
+    this.node.textContent = this.date.day;
+    this.shape();
+    this.paint();
   }
 
-  // method1() {}
+  shape() {
+    this.node.style.width = '30px';
+    this.node.style.height = '30px';
+    this.node.style.margin = '2.5px';
+    this.node.style.border = '1px solid grey';
+  }
 
-  // method2() {}
+  paint() {
+    if (this.activity === 0) {
+      this.node.style.backgroundColor = '#b4c3c9';
+    }
+
+    if (this.activity > 0 && this.activity <= 4) {
+      this.node.style.backgroundColor = '#6a8793';
+    }
+
+    if (this.activity > 4 && this.activity <= 8) {
+      this.node.style.backgroundColor = '#395f6e';
+    }
+
+    if (this.activity > 8) {
+      this.node.style.backgroundColor = '#08384b';
+    }
+  }
 }
-
-// const day1 = new Day();
-// day1.method1();
-// day1.method2();
 
 export default Day;
