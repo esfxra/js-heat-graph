@@ -10,7 +10,7 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "jest": "^27.3.1",
-    "parcel": "^2.0.0"
+    "parcel": "^2.0.1"
   },
   "dependencies": {
     "luxon": "^1.27.0"
