@@ -30,7 +30,7 @@ function generateData(start, end) {
   let data = [];
   dates.forEach((date) =>
     data.push({
-      date: date,
+      date: date.toISO(),
       activity: getRandomIntInclusive(0, 10),
     })
   );
